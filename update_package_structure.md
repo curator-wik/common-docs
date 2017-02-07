@@ -66,9 +66,10 @@ Within each of these subdirectories is the following structure:
 * `deleted_files` - file, optional  
   When files were deleted in this release, this file contains the names of those files
   as paths relative to the component root, with '/' as directory separator, one per
-  line.  
-* For any file `$f` that has been changed in the original source, two files are created in the
-  update package (directory structure is mirrored as necessary):
+  line.
+* `patch_files` - directory, optional  
+  For every file `$f` that has been changed in the original source, two files are created under
+  `patch_files`, in subdirectories mirroring the original source tree:
   * `$f.patch` is the patch to apply, in [google-diff-match-patch unidiff-like format.](https://code.google.com/p/google-diff-match-patch/wiki/Unidiff)
   * `$f.meta` is a json encoding of the following metadata:
     * `initial-md5`: base64-encoded md5 hash of the pre-patched file from the former
