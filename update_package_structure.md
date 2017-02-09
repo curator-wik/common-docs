@@ -81,4 +81,5 @@ The following is a description of files and directories at the package root.
     correctness.
   * `files` - directory, optional  
     A collection of complete files and directories to apply verbatim to the destination.
-    Existing files are overwritten and new files are created.
+    Existing files are overwritten (including entire directory trees, if a file in the newer 
+    version has the same name as a directory in the older version,) and new files are created.
