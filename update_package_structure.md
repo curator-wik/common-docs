@@ -31,8 +31,8 @@ The following is a description of files and directories at the package root.
   Specifies the upgrade package format version. May be left empty or may contain "1.0".
 * `version` - file, required  
   The version of the application or component that will result after applying this update
-  package. Any string is valid as a version identifier as long as it uniquely identifies
-  the release.
+  package. Nearly any string is valid as a version identifier as long as it uniquely identifies
+  the release. The null byte, newline, and '/' are illegal in version identifiers.
 * `prev-versions-inorder` - file, required  
   This file lists all previous versions of the application or component that this update
   package supports updating from. The versions must be listed in the order they were 
