@@ -1,19 +1,15 @@
 # Update Package Structure
-_Working Draft of an in-progress feature. Subject to change._
 
-Update packages are specific directory structures of files typically distributed in Phar 
+Update packages are specific directory structures of files typically distributed in zip 
 archives. This document describes the directories and files that comprise a valid update 
 package.
 
-A single update package may contain sufficient patches to update installations that are 
-one or several releases old. The number of previous releases a given package supports is
-up to its creator.
-
-Besides being a directory tree archive format, Phar supports storage of user-defined 
-archive- and file-level metadata. Many opportunities to use phar metadata storage 
-(example: name of the application it applies to) are intentionally avoided to improve 
-simplicity of archive creation and examination with standard tools. Consequently, update 
-packages include a number of small files that capture such information.
+A single update package may contain information about one or more previous releases, allowing
+a single update package to be applicable to installations one or several releases old.
+In this case, updates are applied iteratively and in-order through the past releases up
+to the latest. It is also of course possible to craft a cpkg that directly updates an application
+from a very old release to the current version, but this cpkg would be useful only for users
+with exactly the very old release it was created for.
 
 ## Update package root
 The following is a description of files and directories at the package root.
